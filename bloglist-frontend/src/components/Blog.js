@@ -4,19 +4,19 @@ const Blog = ({ blog, removeBlock, addLike }) => {
   const loggedUser = JSON.parse(window.localStorage.getItem('loggedUser'))
   if(!info){
     return(
-      <div>
+      <li>
         <span>
           {blog.title} {blog.author}
-          <button onClick={() => setInfo(true)}> view </button>
+          <button id={`view${blog.title}`} onClick={() => setInfo(true)}> view </button>
         </span>
-      </div>
+      </li>
     )
   }
   return(
-    <div>
+    <li>
       <div>
         <span>
-          {blog.title} {blog.author}
+          {blog.title} {blog.author} loggedUser: {loggedUser.username} blogUserName: {blog.user.username}
           <button onClick={() => setInfo(false)}>hide</button>
         </span>
       </div>
@@ -35,8 +35,7 @@ const Blog = ({ blog, removeBlock, addLike }) => {
       <div>
         {blog.user.username === loggedUser.username ? <button onClick={() => removeBlock(blog.title,blog.author,blog.id)}>remove</button> : null}
       </div>
-
-    </div>
+    </li>
   )
 }
 

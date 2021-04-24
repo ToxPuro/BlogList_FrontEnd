@@ -16,7 +16,7 @@ const Blog = ({ blog, removeBlock, addLike }) => {
     <li>
       <div>
         <span>
-          {blog.title} {blog.author} loggedUser: {loggedUser.username} blogUserName: {blog.user.username}
+          {blog.title} {blog.author} blogUserName: {blog.user.username}
           <button onClick={() => setInfo(false)}>hide</button>
         </span>
       </div>
